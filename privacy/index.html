@@ -11,17 +11,17 @@
 <div class="wrap">
 <header>
   <a class="brand" href="/alewei-privacy/">Alewei</a>
-  <nav>
+  <nav aria-label="Hauptnavigation">
     <a href="/alewei-privacy/">Start</a>
     <a href="/alewei-privacy/privacy/">Datenschutz</a>
     <a href="/alewei-privacy/support/">Support</a>
     <a href="/alewei-privacy/impressum/">Impressum</a>
-  </nav>
-</header>
+  <a href="/alewei-privacy/en/privacy/" lang="en" hreflang="en">English</a></nav>
+</header><p class="release-note">Diese Seite beschreibt den vorbereiteten Release 1.0.0. Diese neue Version ist noch nicht veröffentlicht; im Store ist weiterhin die ältere Version 0.1.4 sichtbar.</p>
 
 <h1>Datenschutzerklärung</h1>
-<p class="meta"><strong>Stand:</strong> 31. Juli 2026<br>
-<strong>Gültig für:</strong> Alewei Chrome-Erweiterung Version 0.1.3 (kostenlose Testphase)</p>
+<p class="meta"><strong>Stand:</strong> 4. November 2026<br>
+<strong>Gültig für:</strong> Alewei Chrome-Erweiterung Version 1.0.0</p>
 
 <h2>1. Verantwortlicher</h2>
 <address>
@@ -50,7 +50,7 @@ Video-ID/URL, den Titel, den Kanal, die Dauer und das verfügbare Transkript
 verschlüsselt an Aleweis Worker bei Cloudflare. Der Worker leitet die für die
 Zusammenfassung erforderlichen Daten an Anthropic weiter und nutzt dabei Aleweis
 API-Schlüssel.</p>
-<p>Für das Kontingent und die begrenzte Testphase verarbeitet Alewei zusätzlich
+<p>Für das Kontingent und die begrenzte Betriebszeit verarbeitet Alewei zusätzlich
 eine pseudonyme Installationskennung. Die Erweiterung erzeugt sie lokal;
 serverseitig wird nur ein SHA-256-Hash gespeichert, zusammen mit Request-ID,
 Status, erstem und letztem Erfolgstag, Anzahl aktiver Tage und Gesamterfolgen.
@@ -60,15 +60,15 @@ und den UTC-Tag. Rohe IP-Adressen werden nicht gespeichert.</p>
 <p><strong>Zwecke:</strong> die ausdrücklich angeforderte Zusammenfassung
 bereitstellen, ein Limit von sieben neuen erfolgreichen Zusammenfassungen je
 Installation und UTC-Tag durchsetzen, parallele und doppelte Anfragen sicher
-behandeln, Missbrauch begrenzen, das begrenzte Testbudget schützen und einen
-aggregierten, anonymen Bericht über die Testphase erzeugen.</p>
+behandeln, Missbrauch begrenzen, das begrenzte KI-Budget schützen und einen
+aggregierten, anonymen Bericht über die Betriebszeit erzeugen.</p>
 <p><strong>Rechtsgrundlagen:</strong> Die Verarbeitung der Videodaten und des
 Transkripts im Hosted-Modus beruht auf der ausdrücklichen Einwilligung
 (Art. 6 Abs. 1 lit. a DSGVO), die vor der ersten Verarbeitung aktiv erteilt wird
 und jederzeit mit Wirkung für die Zukunft widerrufen werden kann. Die
 inhaltsfreien Zähler zur Begrenzung von Missbrauch und Kosten beruhen auf dem
 berechtigten Interesse an einem funktionsfähigen, nicht überlasteten und
-finanzierbaren Testbetrieb (Art. 6 Abs. 1 lit. f DSGVO). Das Speichern und
+finanzierbaren Betrieb (Art. 6 Abs. 1 lit. f DSGVO). Das Speichern und
 Auslesen von Informationen im Endgerät erfolgt, soweit es nicht für den
 ausdrücklich gewünschten Dienst unbedingt erforderlich ist, auf Grundlage der
 Einwilligung nach § 25 Abs. 1 TDDDG.</p>
@@ -80,7 +80,7 @@ eingesetzten Plattformen können technische Netzwerk- und Sicherheitsmetadaten
 nach ihrer jeweiligen Konfiguration verarbeiten.</p>
 
 <h2>4. Optionaler Video-Transkriptionsfallback</h2>
-<p>Dieser Fallback ist derzeit deaktiviert. Er ist ausschließlich dann
+<p>Ab Version 1.0.0 ist ein separat bestätigter Video-Fallback vorgesehen. Er ist ausschließlich dann
 vorgesehen, wenn für das aktuelle öffentliche Video Untertitel fehlen oder eine
 von YouTube gemeldete Untertitelspur keine nutzbaren Segmente liefert. Vor dem
 ersten Fallback zeigt Alewei eine <strong>separate</strong>, eigenständig
@@ -128,8 +128,8 @@ berufen kann.</p>
 <tr><td>Pseudonyme Installations-, Request- und Erfolgsdaten</td><td>sofort nach erfolgreichem Zurücksetzen der Zustimmung, sonst 35 Tage nach der letzten Aktivität</td></tr>
 <tr><td>Tageszähler nach Installations-Hash und gehashtem IP-Wert</td><td>nur für den aktuellen und den unmittelbar vorherigen UTC-Tag; sie werden beim Zurücksetzen bewusst nicht gelöscht, damit Kontingent und Missbrauchsschutz nicht am selben Tag zurückgesetzt werden; keine Inhaltsdaten</td></tr>
 <tr><td>Anonyme Tagesaggregate erfolgreicher Zusammenfassungen</td><td>spätestens nach 90 Tagen</td></tr>
-<tr><td>Anonymer Budget-Halteposten bei laufendem Providerauf­ruf</td><td>höchstens bis zum Ablauf der Reservierung (maximal 250 Sekunden); ohne Installations-Hash und ohne Inhaltsdaten</td></tr>
-<tr><td>Globales reserviertes Testbudget und Kill-Switch</td><td>für die begrenzte Laufzeit der Testphase; ohne Inhalts- oder Installationsdaten</td></tr>
+<tr><td>Anonymer Budget-Halteposten bei laufendem Providerauf­ruf</td><td>höchstens bis zum Ablauf der Reservierung (maximal 300 Sekunden); ohne Installations-Hash und ohne Inhaltsdaten</td></tr>
+<tr><td>Globales reserviertes KI-Budget und Kill-Switch</td><td>für die Laufzeit des bereitgestellten Guthabens; ohne Inhalts- oder Installationsdaten</td></tr>
 <tr><td>Lokaler Schlüssel, Einstellungen und lokaler Cache</td><td>bis sie in Alewei oder in Chrome gelöscht werden</td></tr>
 </table>
 <p>„Zustimmung zurücksetzen“ sendet zunächst eine Löschanfrage an Alewei und
@@ -140,8 +140,7 @@ nicht fälschlich als gelöscht erscheint.</p>
 E-Mail an <a href="mailto:isaacdoane7@gmail.com">isaacdoane7@gmail.com</a>.
 Bitte sende dabei keine API-Schlüssel, Transkripte oder vertraulichen
 Videoinhalte mit. Da die serverseitigen Daten pseudonym sind, wird zur Zuordnung
-die betroffene Installationskennung benötigt; sie lässt sich in den
-Einstellungen von Alewei anzeigen.</p>
+der Supportcode benötigt; er lässt sich in den Einstellungen von Alewei anzeigen und kopieren. Dieser Code ist ein SHA-256-Hash und kein geheimer Installations-Bearer oder API-Schlüssel.</p>
 
 <h2>8. Berechtigungen</h2>
 <ul>
@@ -191,5 +190,5 @@ Datennutzung (Limited Use).</p>
   <a href="/alewei-privacy/impressum/">Impressum</a>
 </footer>
 </div>
-</body>
+<section class="wrap"><h2>Technische Ergänzung für Version 1.0.0</h2><p>Die Spracheinstellung Automatisch / Deutsch / English steuert die Oberfläche und neue Zusammenfassungen. Der lokale Cache trennt Ergebnisse nach Ausgabesprache. Für den Kostenschutz werden vor Provideraufrufen inhaltsfreie Reservierungen und Aufrufzustände gespeichert. Nach einem Abbruch oder ungewissem Providerverbrauch bleiben Kosten konservativ berücksichtigt; der Ablauf einer Reservierung ist keine Erstattung bereits gestarteter Verarbeitung. Kostenaggregate enthalten keine Transkripte oder Videometadaten. Inhaltsfreie technische Zulassungslogs enthalten ausschließlich feste Routennamen, HTTP-Methode und HTTP-Status. Automatische Aufruflogs und Subrequest-Traces sind deaktiviert. Die tatsächlichen Plattform- und Vertragsfristen werden vor Liveaktivierung im Release-Nachweis festgehalten.</p></section></body>
 </html>

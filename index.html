@@ -4,25 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alewei — YouTube-Videos zusammenfassen</title>
-<meta name="description" content="Alewei ist eine Chrome-Erweiterung, die auf deinen Klick hin das Transkript des geöffneten YouTube-Videos liest und daraus eine strukturierte deutsche Zusammenfassung erstellt.">
+<meta name="description" content="Alewei ist eine Chrome-Erweiterung, die auf deinen Klick hin das Transkript des geöffneten YouTube-Videos liest und daraus eine strukturierte deutsche oder englische Zusammenfassung erstellt.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
 <header>
   <a class="brand" href="/alewei-privacy/">Alewei</a>
-  <nav>
+  <nav aria-label="Hauptnavigation">
     <a href="/alewei-privacy/">Start</a>
     <a href="/alewei-privacy/privacy/">Datenschutz</a>
     <a href="/alewei-privacy/support/">Support</a>
     <a href="/alewei-privacy/impressum/">Impressum</a>
-  </nav>
-</header>
+  <a href="/alewei-privacy/en/" lang="en" hreflang="en">English</a></nav>
+</header><p class="release-note">Diese Seite beschreibt den vorbereiteten Release 1.0.0. Diese neue Version ist noch nicht veröffentlicht; im Store ist weiterhin die ältere Version 0.1.4 sichtbar.</p>
 
 <h1>Entscheide schneller, ob sich ein YouTube-Video lohnt.</h1>
 <p class="lede">Alewei ist eine Chrome-Erweiterung. Sie liest erst nach deinem Klick das
 verfügbare Transkript des geöffneten YouTube-Videos und erstellt daraus eine
-strukturierte deutsche Zusammenfassung in der Seitenleiste.</p>
+strukturierte deutsche oder englische Zusammenfassung in der Seitenleiste.</p>
 
 <h2>Was du bekommst</h2>
 <ul>
@@ -34,17 +34,20 @@ strukturierte deutsche Zusammenfassung in der Seitenleiste.</p>
 </ul>
 
 <h2>Status</h2>
-<p>Alewei befindet sich in einer geschlossenen, kostenlosen Testphase. Die
-Erweiterung ist noch nicht öffentlich im Chrome Web Store verfügbar.</p>
+<p>Die offizielle kostenlose Veröffentlichung von Alewei 1.0.0 wird vorbereitet. Der Link zur neuen Version folgt nach erfolgreicher technischer Abnahme und Store-Genehmigung.</p>
 
 <h2>Kosten</h2>
 <p>Alewei ist kostenlos und enthält keine Abonnements, keine In-App-Käufe und
-keine Werbung. Für die Testphase stellt Alewei ein begrenztes, gemeinsames
+keine Werbung. Für die Betriebszeit stellt Alewei ein begrenztes, gemeinsames
 KI-Guthaben bereit. Alternativ kann ein eigener Anthropic-API-Schlüssel
 hinterlegt werden; dann rechnet Anthropic die Nutzung direkt mit dem Nutzer ab.</p>
+<p>Im bereitgestellten Zugang sind bis zu sieben neue erfolgreiche Zusammenfassungen je Installation und UTC-Tag für Videos bis 100 Minuten möglich, solange Guthaben verfügbar ist. Schutzmaßnahmen gegen Missbrauch können zusätzlich begrenzen. Es gibt keine automatische Aufladung.</p>
+
+<h2>Wenn Untertitel fehlen</h2>
+<p>Nach gesonderter Zustimmung kann der Video-Fallback die öffentliche YouTube-URL über Cloudflare prüfen und von Google Gemini ein zeitgestempeltes Transkript erstellen lassen. Im bereitgestellten Zugang fasst Anthropic das Transkript zusammen. Mit eigenem Schlüssel geht es zurück an die Erweiterung und dann direkt an Anthropic. Dein Schlüssel wird dabei nie an Alewei oder Google gesendet.</p>
 
 <h2>Grenzen</h2>
-<p>Alewei arbeitet mit technisch verfügbaren YouTube-Untertiteln. Automatische
+<p>Alewei arbeitet mit technisch verfügbaren YouTube-Untertiteln oder dem separat bestätigten Video-Fallback. Automatische
 Untertitel und KI-Ausgaben können Fehler enthalten. Prüfe wichtige Aussagen im
 Originalvideo. Alewei lädt keine Videos als Datei herunter und ist nicht mit
 YouTube, Google oder Anthropic verbunden.</p>
