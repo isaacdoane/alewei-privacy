@@ -44,7 +44,7 @@ hinterlegt werden; dann rechnet Anthropic die Nutzung direkt mit dem Nutzer ab.<
 <p>Im bereitgestellten Zugang sind bis zu sieben neue erfolgreiche Zusammenfassungen je Installation und UTC-Tag für Videos bis 100 Minuten möglich, solange Guthaben verfügbar ist. Schutzmaßnahmen gegen Missbrauch können zusätzlich begrenzen. Es gibt keine automatische Aufladung.</p>
 
 <h2>Wenn Untertitel fehlen</h2>
-<p>Nach gesonderter Zustimmung kann der Video-Fallback die öffentliche YouTube-URL über Cloudflare prüfen und von Google Gemini ein zeitgestempeltes Transkript erstellen lassen. Im bereitgestellten Zugang fasst Anthropic das Transkript zusammen. Mit eigenem Schlüssel geht es zurück an die Erweiterung und dann direkt an Anthropic. Dein Schlüssel wird dabei nie an Alewei oder Google gesendet.</p>
+<p>Nach gesonderter Zustimmung kann der Video-Fallback über Cloudflare die Video-ID an die YouTube Data API senden. Bestätigt die API die Sichtbarkeit, den passenden Live-Status und die Dauer, erhält Google Gemini die öffentliche Video-URL zur Transkription. Im bereitgestellten Zugang fasst Anthropic das Transkript zusammen. Mit eigenem Schlüssel geht es zurück an die Erweiterung und dann direkt an Anthropic. Dein Schlüssel wird dabei nie an Alewei oder Google gesendet.</p>
 
 <h2>Grenzen</h2>
 <p>Alewei arbeitet mit technisch verfügbaren YouTube-Untertiteln oder dem separat bestätigten Video-Fallback. Automatische

@@ -90,19 +90,16 @@ ersten Fallback zeigt Alewei eine <strong>separate</strong>, eigenständig
 versionierte Daten-Offenlegung. Eine Ablehnung startet keinen Videoabruf und
 schaltet weder den Hosted-Modus noch den eigenen Schlüssel ab.</p>
 <p>Nach aktiver Bestätigung sendet die Erweiterung validierte Videometadaten an
-Aleweis Worker. Der Worker konstruiert ausschließlich die kanonische öffentliche
-YouTube-URL, prüft sie durch einen Abruf bei YouTube und sendet sie
-anschließend an Google Gemini, damit ein zeitgestempeltes Transkript entsteht.
+Aleweis Worker. Der Worker sendet die Video-ID an die YouTube Data API von Google. Er prüft anhand der Antwort, ob das Video öffentlich ist, ob es live oder geplant ist und wie lange es dauert. Erst nach erfolgreicher Prüfung sendet er die aus der ID erstellte öffentliche Video-URL zur Transkription an Google Gemini.
 Eine vom Client vorgegebene URL akzeptiert der Worker nicht.</p>
 <p>Im Hosted-Modus wird das dabei nur im Arbeitsspeicher entstehende Transkript
 mit Anthropic weiterverarbeitet. Beim eigenen Schlüssel geht das Transkript an
 die Erweiterung zurück, die es anschließend direkt an Anthropic sendet. Der
 persönliche Anthropic-Schlüssel wird dabei weder an Aleweis Worker noch an
-Google gesendet.</p>
+Google gesendet. Für die YouTube-API-Dienste gelten die <a href="https://www.youtube.com/t/terms">YouTube-Nutzungsbedingungen</a>. Wie Google Daten verarbeitet, beschreibt die <a href="https://policies.google.com/privacy">Google-Datenschutzerklärung</a>.</p>
 <p><strong>Rechtsgrundlage:</strong> gesonderte Einwilligung
 (Art. 6 Abs. 1 lit. a DSGVO).<br>
-<strong>Empfänger:</strong> Cloudflare, YouTube für die Prüfung der öffentlichen
-URL, Google für die Transkription und Anthropic für die Zusammenfassung.</p>
+<strong>Empfänger:</strong> Cloudflare, Google für die Metadatenprüfung mit der YouTube Data API, Google für die Transkription und Anthropic für die Zusammenfassung.</p>
 
 <h2>5. Eigener Anthropic-API-Schlüssel</h2>
 <p>Wird ein eigener gültiger Anthropic-API-Schlüssel in Alewei gespeichert, hat
