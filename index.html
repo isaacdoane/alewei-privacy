@@ -4,25 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alewei — YouTube-Videos zusammenfassen</title>
-<meta name="description" content="Alewei ist eine Chrome-Erweiterung, die auf deinen Klick hin das Transkript des geöffneten YouTube-Videos liest und daraus eine strukturierte deutsche Zusammenfassung erstellt.">
+<meta name="description" content="Alewei fasst öffentliche YouTube-Videos nach deiner Zustimmung auf Deutsch oder Englisch zusammen.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
 <header>
   <a class="brand" href="/alewei-privacy/">Alewei</a>
-  <nav>
+  <nav aria-label="Hauptnavigation">
     <a href="/alewei-privacy/">Start</a>
     <a href="/alewei-privacy/privacy/">Datenschutz</a>
     <a href="/alewei-privacy/support/">Support</a>
     <a href="/alewei-privacy/impressum/">Impressum</a>
-  </nav>
-</header>
+  <a href="/alewei-privacy/en/" lang="en" hreflang="en">English</a><a href="/alewei-privacy/terms/">Nutzungsbedingungen</a></nav>
+</header><p class="release-note">Diese Seite beschreibt den vorbereiteten Release 1.0.0. Diese neue Version ist noch nicht veröffentlicht; im Store ist weiterhin die ältere Version 0.1.4 sichtbar.</p>
 
 <h1>Entscheide schneller, ob sich ein YouTube-Video lohnt.</h1>
-<p class="lede">Alewei ist eine Chrome-Erweiterung. Sie liest erst nach deinem Klick das
-verfügbare Transkript des geöffneten YouTube-Videos und erstellt daraus eine
-strukturierte deutsche Zusammenfassung in der Seitenleiste.</p>
+<p class="lede">Öffne ein öffentliches YouTube-Video und klicke in der Chrome-Symbolleiste auf Alewei. Nach deiner Zustimmung analysiert Alewei das Video und erstellt eine deutsche oder englische Zusammenfassung in der Seitenleiste.</p>
 
 <h2>Was du bekommst</h2>
 <ul>
@@ -34,20 +32,23 @@ strukturierte deutsche Zusammenfassung in der Seitenleiste.</p>
 </ul>
 
 <h2>Status</h2>
-<p>Alewei befindet sich in einer geschlossenen, kostenlosen Testphase. Die
-Erweiterung ist noch nicht öffentlich im Chrome Web Store verfügbar.</p>
+<p>Die offizielle kostenlose Veröffentlichung von Alewei 1.0.0 wird vorbereitet. Der Link zur neuen Version folgt nach erfolgreicher technischer Abnahme und Store-Genehmigung.</p>
 
 <h2>Kosten</h2>
 <p>Alewei ist kostenlos und enthält keine Abonnements, keine In-App-Käufe und
-keine Werbung. Für die Testphase stellt Alewei ein begrenztes, gemeinsames
+keine Werbung. Für die Betriebszeit stellt Alewei ein begrenztes, gemeinsames
 KI-Guthaben bereit. Alternativ kann ein eigener Anthropic-API-Schlüssel
 hinterlegt werden; dann rechnet Anthropic die Nutzung direkt mit dem Nutzer ab.</p>
+<p>Im bereitgestellten Zugang sind bis zu sieben neue erfolgreiche Zusammenfassungen je Installation und UTC-Tag für Videos bis 100 Minuten möglich, solange Guthaben verfügbar ist. Schutzmaßnahmen gegen Missbrauch können zusätzlich begrenzen. Es gibt keine automatische Aufladung.</p>
+
+<h2>So läuft die Analyse ab</h2>
+<p>Der Worker sendet die Video-ID an die YouTube Data API und erhält Titel, Kanal, Laufzeit und Angaben zur Öffentlichkeit sowie zum Live-Status. Verarbeitet werden bestätigte öffentliche Videos bis 100 Minuten. An Google Gemini geht anschließend die aus der ID erzeugte öffentliche Video-URL. Gemini erstellt daraus ein Zeitstempel-Transkript. Im bereitgestellten Zugang sendet der Worker die für die Zusammenfassung nötigen Informationen an Anthropic. Mit eigenem Anthropic-Schlüssel übernimmt die Erweiterung diesen Schritt direkt.</p>
+
+<h2>Eigener Anthropic-Schlüssel</h2>
+<p>Mit einem eigenen Anthropic-API-Schlüssel sendet die Erweiterung das von Gemini erstellte Zeitstempel-Transkript und die für die Zusammenfassung nötigen Daten direkt an Anthropic. Der Schlüssel wird nur in deinem Chrome-Profil gespeichert und an Anthropic gesendet. Anthropic kann deine Nutzung nach deinem Tarif abrechnen. Die Videoanalyse über Gemini nutzt weiterhin das bereitgestellte Guthaben von Alewei.</p>
 
 <h2>Grenzen</h2>
-<p>Alewei arbeitet mit technisch verfügbaren YouTube-Untertiteln. Automatische
-Untertitel und KI-Ausgaben können Fehler enthalten. Prüfe wichtige Aussagen im
-Originalvideo. Alewei lädt keine Videos als Datei herunter und ist nicht mit
-YouTube, Google oder Anthropic verbunden.</p>
+<p>Verarbeitet werden öffentliche Videos bis 100 Minuten ohne laufende oder geplante Übertragung. Prüfe wichtige Aussagen im Originalvideo. KI-Transkripte und Zusammenfassungen können Fehler enthalten.</p>
 
 <footer>
   <a href="/alewei-privacy/privacy/">Datenschutzerklärung</a> ·

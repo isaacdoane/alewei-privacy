@@ -11,17 +11,17 @@
 <div class="wrap">
 <header>
   <a class="brand" href="/alewei-privacy/">Alewei</a>
-  <nav>
+  <nav aria-label="Hauptnavigation">
     <a href="/alewei-privacy/">Start</a>
     <a href="/alewei-privacy/privacy/">Datenschutz</a>
     <a href="/alewei-privacy/support/">Support</a>
     <a href="/alewei-privacy/impressum/">Impressum</a>
-  </nav>
-</header>
+  <a href="/alewei-privacy/en/privacy/" lang="en" hreflang="en">English</a><a href="/alewei-privacy/terms/">Nutzungsbedingungen</a></nav>
+</header><p class="release-note">Diese Seite beschreibt den vorbereiteten Release 1.0.0. Diese neue Version ist noch nicht veröffentlicht; im Store ist weiterhin die ältere Version 0.1.4 sichtbar. <a href="/alewei-privacy/privacy/0.1.4/">Datenschutzerklärung für Version 0.1.4</a>.</p>
 
 <h1>Datenschutzerklärung</h1>
-<p class="meta"><strong>Stand:</strong> 31. Juli 2026<br>
-<strong>Gültig für:</strong> Alewei Chrome-Erweiterung Version 0.1.3 (kostenlose Testphase)</p>
+<p class="meta"><strong>Stand:</strong> 20. November 2026<br>
+<strong>Gültig für:</strong> Alewei Chrome-Erweiterung Version 1.0.0</p>
 
 <h2>1. Verantwortlicher</h2>
 <address>
@@ -33,24 +33,10 @@ E-Mail: <a href="mailto:isaacdoane7@gmail.com">isaacdoane7@gmail.com</a>
 </address>
 
 <h2>2. Was Alewei macht</h2>
-<p>Alewei ist eine Chrome-Erweiterung für eine vom Nutzer angeforderte
-Zusammenfassung des aktuell geöffneten YouTube-Videos. Erst nach einer
-Nutzeraktion liest die Erweiterung die Video-ID beziehungsweise URL, den Titel,
-den Kanal, die Dauer und das verfügbare Transkript einschließlich Zeitstempeln.
-Automatische Untertitel und KI-Ausgaben können Fehler enthalten.</p>
-<p>Alewei verwendet diese Inhalte nicht für Werbung, Profilbildung oder eigenes
-KI-Training. Öffentliche Transkripte können personenbezogene Daten enthalten.
-Alewei ordnet solche Kategorien nicht gesondert zu; sie werden nur technisch
-verarbeitet, soweit sie im ausgewählten Transkript vorhanden sind.</p>
-
-<h2>3. Hosted-Modus nach aktiver Zustimmung</h2>
-<p>Vor der ersten Hosted-Zusammenfassung zeigt Alewei eine konkrete
-Daten-Offenlegung. Erst nach aktiver Zustimmung sendet die Erweiterung die
-Video-ID/URL, den Titel, den Kanal, die Dauer und das verfügbare Transkript
-verschlüsselt an Aleweis Worker bei Cloudflare. Der Worker leitet die für die
-Zusammenfassung erforderlichen Daten an Anthropic weiter und nutzt dabei Aleweis
-API-Schlüssel.</p>
-<p>Für das Kontingent und die begrenzte Testphase verarbeitet Alewei zusätzlich
+<p>Alewei erkennt die Video-ID aus der Adresse des aktiven YouTube-Tabs. Wenn du in der Chrome-Seitenleiste eine Analyse anforderst und zustimmst, sendet die Erweiterung die ID und die Ausgabesprache an Aleweis Worker bei Cloudflare. Die Chrome-Erweiterung verwendet die YouTube Data API für öffentliche Videometadaten.</p>
+<p>Alewei kann die fertige Zusammenfassung mit der Video-ID, Titel, Kanal, Dauer und Ausgabesprache lokal in Chrome zwischenspeichern. Du kannst den Cache in den Einstellungen löschen. KI-Transkripte und Zusammenfassungen können Fehler und personenbezogene Informationen enthalten. Alewei nutzt die Inhalte zur angeforderten Analyse und Ergebnisanzeige.</p>
+<h2>3. Kontingent und Rechtsgrundlage</h2>
+<p>Für das Kontingent und die begrenzte Betriebszeit verarbeitet Alewei zusätzlich
 eine pseudonyme Installationskennung. Die Erweiterung erzeugt sie lokal;
 serverseitig wird nur ein SHA-256-Hash gespeichert, zusammen mit Request-ID,
 Status, erstem und letztem Erfolgstag, Anzahl aktiver Tage und Gesamterfolgen.
@@ -60,59 +46,32 @@ und den UTC-Tag. Rohe IP-Adressen werden nicht gespeichert.</p>
 <p><strong>Zwecke:</strong> die ausdrücklich angeforderte Zusammenfassung
 bereitstellen, ein Limit von sieben neuen erfolgreichen Zusammenfassungen je
 Installation und UTC-Tag durchsetzen, parallele und doppelte Anfragen sicher
-behandeln, Missbrauch begrenzen, das begrenzte Testbudget schützen und einen
-aggregierten, anonymen Bericht über die Testphase erzeugen.</p>
+behandeln, Missbrauch begrenzen, das begrenzte KI-Budget schützen und einen
+aggregierten, anonymen Bericht über die Betriebszeit erzeugen.</p>
 <p><strong>Rechtsgrundlagen:</strong> Die Verarbeitung der Videodaten und des
-Transkripts im Hosted-Modus beruht auf der ausdrücklichen Einwilligung
+Transkripts für die angeforderte Videoanalyse beruht auf der ausdrücklichen Einwilligung
 (Art. 6 Abs. 1 lit. a DSGVO), die vor der ersten Verarbeitung aktiv erteilt wird
 und jederzeit mit Wirkung für die Zukunft widerrufen werden kann. Die
 inhaltsfreien Zähler zur Begrenzung von Missbrauch und Kosten beruhen auf dem
 berechtigten Interesse an einem funktionsfähigen, nicht überlasteten und
-finanzierbaren Testbetrieb (Art. 6 Abs. 1 lit. f DSGVO). Das Speichern und
+finanzierbaren Betrieb (Art. 6 Abs. 1 lit. f DSGVO). Das Speichern und
 Auslesen von Informationen im Endgerät erfolgt, soweit es nicht für den
 ausdrücklich gewünschten Dienst unbedingt erforderlich ist, auf Grundlage der
 Einwilligung nach § 25 Abs. 1 TDDDG.</p>
 <p><strong>Empfänger:</strong> Cloudflare für den Worker-, Netzwerk- und
-Durable-Object-Betrieb sowie Anthropic für die KI-Zusammenfassung.</p>
+Durable-Object-Betrieb, Google für die Metadatenprüfung und Transkription sowie Anthropic für die KI-Zusammenfassung.</p>
 <p>Alewei speichert Transkripte, Video-ID/URL, Titel, Kanal, Prompt und
 Zusammenfassung nicht serverseitig und schreibt keine Inhaltslogs. Die
 eingesetzten Plattformen können technische Netzwerk- und Sicherheitsmetadaten
 nach ihrer jeweiligen Konfiguration verarbeiten.</p>
 
-<h2>4. Optionaler Video-Transkriptionsfallback</h2>
-<p>Dieser Fallback ist derzeit deaktiviert. Er ist ausschließlich dann
-vorgesehen, wenn für das aktuelle öffentliche Video Untertitel fehlen oder eine
-von YouTube gemeldete Untertitelspur keine nutzbaren Segmente liefert. Vor dem
-ersten Fallback zeigt Alewei eine <strong>separate</strong>, eigenständig
-versionierte Daten-Offenlegung. Eine Ablehnung startet keinen Videoabruf und
-schaltet weder den Hosted-Modus noch den eigenen Schlüssel ab.</p>
-<p>Nach aktiver Bestätigung sendet die Erweiterung validierte Videometadaten an
-Aleweis Worker. Der Worker konstruiert ausschließlich die kanonische öffentliche
-YouTube-URL, prüft sie durch einen Abruf bei YouTube und sendet sie
-anschließend an Google Gemini, damit ein zeitgestempeltes Transkript entsteht.
-Eine vom Client vorgegebene URL akzeptiert der Worker nicht.</p>
-<p>Im Hosted-Modus wird das dabei nur im Arbeitsspeicher entstehende Transkript
-mit Anthropic weiterverarbeitet. Beim eigenen Schlüssel geht das Transkript an
-die Erweiterung zurück, die es anschließend direkt an Anthropic sendet. Der
-persönliche Anthropic-Schlüssel wird dabei weder an Aleweis Worker noch an
-Google gesendet.</p>
-<p><strong>Rechtsgrundlage:</strong> gesonderte Einwilligung
-(Art. 6 Abs. 1 lit. a DSGVO).<br>
-<strong>Empfänger:</strong> Cloudflare, YouTube für die Prüfung der öffentlichen
-URL, Google für die Transkription und Anthropic für die Zusammenfassung.</p>
-
+<h2>4. Videoanalyse nach Zustimmung</h2>
+<p>Vor der ersten Analyse zeigt Alewei die Datenschutzinformationen und fragt nach deiner ausdrücklichen Zustimmung. In den Einstellungen kannst du die Zustimmung für künftige Analysen widerrufen.</p>
+<p>Der Worker sendet die Video-ID an die YouTube Data API und erhält Titel, Kanal, Laufzeit und Angaben zur Öffentlichkeit sowie zum Live-Status. Verarbeitet werden bestätigte öffentliche Videos bis 100 Minuten. An Google Gemini geht anschließend die aus der ID erzeugte öffentliche Video-URL. Gemini erstellt daraus ein Zeitstempel-Transkript. Im bereitgestellten Zugang sendet der Worker die für die Zusammenfassung nötigen Informationen an Anthropic. Mit eigenem Anthropic-Schlüssel übernimmt die Erweiterung diesen Schritt direkt.</p>
+<p>Die <a href="/alewei-privacy/terms/">Nutzungsbedingungen</a> erläutern die Nutzung von Alewei. Dabei gelten die <a href="https://www.youtube.com/t/terms">YouTube-Nutzungsbedingungen</a>. Informationen zur Verarbeitung bei Google findest du in der <a href="https://policies.google.com/privacy">Google-Datenschutzerklärung</a>.</p>
 <h2>5. Eigener Anthropic-API-Schlüssel</h2>
-<p>Wird ein eigener gültiger Anthropic-API-Schlüssel in Alewei gespeichert, hat
-dieser bei normal verfügbaren Untertiteln Vorrang. Die Erweiterung sendet
-Schlüssel, Video-Metadaten, Transkript und Prompt dann direkt per HTTPS an
-Anthropic. Aleweis Worker wird für diesen Weg nicht aufgerufen; der Betreiber
-von Alewei erhält weder diese Inhalte noch den Schlüssel.</p>
-<p>Der Schlüssel liegt in <code>chrome.storage.local</code> im Chrome-Profil, bis
-er in Alewei gelöscht oder die Erweiterungsdaten entfernt werden. Für die
-Verarbeitung bei Anthropic gelten zusätzlich die Bedingungen und
-Datenschutzhinweise des jeweiligen Anthropic-Kontos. Alewei behauptet keine
-Zero-Data-Retention bei Anthropic.</p>
-
+<p>Mit einem eigenen Anthropic-API-Schlüssel sendet die Erweiterung das von Gemini erstellte Zeitstempel-Transkript und die für die Zusammenfassung nötigen Daten direkt an Anthropic. Der Schlüssel wird nur in deinem Chrome-Profil gespeichert und an Anthropic gesendet. Anthropic kann deine Nutzung nach deinem Tarif abrechnen. Die Videoanalyse über Gemini nutzt weiterhin das bereitgestellte Guthaben von Alewei.</p>
+<p>Für die Verarbeitung bei Anthropic gelten die Bedingungen und Datenschutzhinweise deines Anthropic-Kontos. Du kannst den Schlüssel in den Einstellungen oder durch Entfernen der Erweiterungsdaten löschen.</p>
 <h2>6. Übermittlung in Drittländer</h2>
 <p>Cloudflare, Anthropic und Google sind Anbieter mit Sitz beziehungsweise
 Verarbeitung in den USA. Eine Verarbeitung außerhalb der EU/des EWR kann daher
@@ -128,34 +87,26 @@ berufen kann.</p>
 <tr><td>Pseudonyme Installations-, Request- und Erfolgsdaten</td><td>sofort nach erfolgreichem Zurücksetzen der Zustimmung, sonst 35 Tage nach der letzten Aktivität</td></tr>
 <tr><td>Tageszähler nach Installations-Hash und gehashtem IP-Wert</td><td>nur für den aktuellen und den unmittelbar vorherigen UTC-Tag; sie werden beim Zurücksetzen bewusst nicht gelöscht, damit Kontingent und Missbrauchsschutz nicht am selben Tag zurückgesetzt werden; keine Inhaltsdaten</td></tr>
 <tr><td>Anonyme Tagesaggregate erfolgreicher Zusammenfassungen</td><td>spätestens nach 90 Tagen</td></tr>
-<tr><td>Anonymer Budget-Halteposten bei laufendem Providerauf­ruf</td><td>höchstens bis zum Ablauf der Reservierung (maximal 250 Sekunden); ohne Installations-Hash und ohne Inhaltsdaten</td></tr>
-<tr><td>Globales reserviertes Testbudget und Kill-Switch</td><td>für die begrenzte Laufzeit der Testphase; ohne Inhalts- oder Installationsdaten</td></tr>
-<tr><td>Lokaler Schlüssel, Einstellungen und lokaler Cache</td><td>bis sie in Alewei oder in Chrome gelöscht werden</td></tr>
+<tr><td>Anonymer Budget-Halteposten bei laufendem Providerauf­ruf</td><td>höchstens bis zum Ablauf der Reservierung (maximal 300 Sekunden); ohne Installations-Hash und ohne Inhaltsdaten</td></tr>
+<tr><td>Globales reserviertes KI-Budget und Kill-Switch</td><td>für die Laufzeit des bereitgestellten Guthabens; ohne Inhalts- oder Installationsdaten</td></tr>
+<tr><td>Lokaler Schlüssel und Einstellungen</td><td>bis sie in Alewei oder in Chrome gelöscht werden</td></tr>
+<tr><td>Lokaler Ergebnis-Cache einschließlich YouTube-Metadaten</td><td>Bis zur Löschung in Alewei, spätestens 30 Tage nach Abruf der Metadaten</td></tr>
 </table>
-<p>„Zustimmung zurücksetzen“ sendet zunächst eine Löschanfrage an Alewei und
-entfernt nach erfolgreicher Serverbestätigung die lokale Installationskennung.
-Bei einem Netzwerkfehler zeigt Alewei dies offen an, damit die lokale Kennung
-nicht fälschlich als gelöscht erscheint.</p>
+<p>In Aleweis Einstellungen entfernt „Lokale Zusammenfassungen löschen“ den
+Ergebnis-Cache. „Zustimmungen und Nutzungsdaten löschen“ sendet eine Löschanfrage
+an Alewei und entfernt nach erfolgreicher Serverbestätigung die lokale
+Installationskennung und die Zustimmungen. Bei einem Netzwerkfehler zeigt Alewei
+den Fehler an. Beide Aktionen betreffen Daten bei Alewei. Um bei YouTube
+gespeicherte Daten zu löschen, verwende <a href="https://www.youtube.com/">YouTube</a> direkt.</p>
 <p>Für eine Löschung oder Auskunft außerhalb der Erweiterung genügt eine
 E-Mail an <a href="mailto:isaacdoane7@gmail.com">isaacdoane7@gmail.com</a>.
 Bitte sende dabei keine API-Schlüssel, Transkripte oder vertraulichen
 Videoinhalte mit. Da die serverseitigen Daten pseudonym sind, wird zur Zuordnung
-die betroffene Installationskennung benötigt; sie lässt sich in den
-Einstellungen von Alewei anzeigen.</p>
+der Supportcode benötigt; er lässt sich in den Einstellungen von Alewei anzeigen und kopieren. Dieser Code ist ein SHA-256-Hash und kein geheimer Installations-Bearer oder API-Schlüssel.</p>
 
 <h2>8. Berechtigungen</h2>
-<ul>
-  <li><code>youtube.com</code> — Videokontext und verfügbare Untertitel auf der geöffneten Seite lesen</li>
-  <li><code>api.anthropic.com</code> — beim eigenen Schlüssel die angeforderte Zusammenfassung erstellen</li>
-  <li>Alewei-Worker — im Hosted-Modus die Zusammenfassung, das Kontingent und den Missbrauchsschutz abwickeln</li>
-  <li><code>storage</code> — Einstellungen, Bestätigungen, Schlüssel und Cache im Chrome-Profil ablegen</li>
-  <li><code>sidePanel</code> — die Zusammenfassung neben dem Video anzeigen</li>
-  <li><code>alarms</code> — laufende Anfragen zuverlässig abschließen oder abbrechen</li>
-</ul>
-<p>Lokale Speicherung bedeutet nicht, dass Daten an Alewei gehen. Abhängig von
-Browser-, Profil- und Sync-Einstellungen können jedoch Chrome oder das
-Betriebssystem lokale Daten verarbeiten.</p>
-
+<p>Automatisch, Deutsch oder Englisch steuert Oberfläche und neue Zusammenfassungen. Der lokale Cache berücksichtigt die Ausgabesprache.</p>
+<ul><li>youtube.com — die Video-ID in der Adresse des aktiven YouTube-Tabs erkennen und Sprünge zu Zeitstempeln ermöglichen</li><li>api.anthropic.com — mit eigenem Schlüssel die angeforderte Zusammenfassung direkt bei Anthropic erstellen</li><li>Alewei-Worker — öffentliche Videometadaten prüfen, Gemini-Transkription und gegebenenfalls die Hosted-Zusammenfassung ausführen sowie Kontingent und Ausgaben begrenzen</li><li>storage — Schlüssel, Einstellungen, Zustimmungen und Ergebnisse im Chrome-Profil speichern</li><li>sidePanel — Alewei und die Zusammenfassung in der Chrome-Seitenleiste anzeigen</li><li>alarms — die regelmäßige Bereinigung lokaler Videodaten ausführen</li></ul>
 <h2>9. Website und Support</h2>
 <p>Diese Website wird über GitHub Pages bereitgestellt. Beim Aufruf verarbeitet
 GitHub technische Zugriffsdaten nach seinen eigenen Bedingungen. Bei
@@ -191,5 +142,5 @@ Datennutzung (Limited Use).</p>
   <a href="/alewei-privacy/impressum/">Impressum</a>
 </footer>
 </div>
-</body>
+<section class="wrap"><h2>Technische Ergänzung für Version 1.0.0</h2><p>Die Spracheinstellung Automatisch / Deutsch / English steuert die Oberfläche und neue Zusammenfassungen. Der lokale Cache trennt Ergebnisse nach Ausgabesprache. Für den Kostenschutz werden vor Provideraufrufen inhaltsfreie Reservierungen und Aufrufzustände gespeichert. Nach einem Abbruch oder ungewissem Providerverbrauch bleiben Kosten konservativ berücksichtigt; der Ablauf einer Reservierung ist keine Erstattung bereits gestarteter Verarbeitung. Kostenaggregate enthalten keine Transkripte oder Videometadaten. Inhaltsfreie technische Zulassungslogs enthalten ausschließlich feste Routennamen, HTTP-Methode und HTTP-Status. Automatische Aufruflogs und Subrequest-Traces sind deaktiviert. Die tatsächlichen Plattform- und Vertragsfristen werden vor Liveaktivierung im Release-Nachweis festgehalten.</p></section></body>
 </html>
