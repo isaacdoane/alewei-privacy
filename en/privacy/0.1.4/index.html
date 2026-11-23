@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy for Alewei 0.1.4</title>
+<link rel="stylesheet" href="/alewei-privacy/style.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="brand" href="/alewei-privacy/en/">Alewei</a>
+  <nav aria-label="Main navigation">
+    <a href="/alewei-privacy/en/">Home</a>
+    <a href="/alewei-privacy/en/privacy/">Privacy for 1.0.0</a>
+    <a href="/alewei-privacy/en/support/">Support</a>
+    <a href="/alewei-privacy/en/impressum/">Legal notice</a>
+    <a href="/alewei-privacy/privacy/0.1.4/" lang="de" hreflang="de">Deutsch</a>
+  </nav>
+</header>
+
+<h1>Privacy policy for Alewei 0.1.4</h1>
+<p class="release-note">This notice applies to Chrome extension version 0.1.4. The prepared 1.0.0 release has a <a href="/alewei-privacy/en/privacy/">separate privacy policy</a>.</p>
+
+<h2>Controller and contact</h2>
+<address>
+Isaac Antonio<br>
+Am Mühlen Falder 8<br>
+50735 Cologne<br>
+Germany<br>
+<a href="mailto:isaacdoane7@gmail.com">isaacdoane7@gmail.com</a>
+</address>
+
+<h2>Video context and captions</h2>
+<p>When you open or switch to a YouTube video, Alewei reads the video ID, title, channel and duration locally in your browser. The extension retrieves available captions with timestamps when you request a summary. The optional Gemini fallback for missing or unreadable captions is disabled in the current public service.</p>
+<p>Public captions can contain personal data. Alewei processes it when it appears in the selected transcript. Automatic captions and AI outputs can contain errors.</p>
+
+<h2>Summaries with provided access</h2>
+<p>After you consent, the extension sends the video ID, title, channel, duration and transcript over an encrypted connection to Alewei’s Cloudflare Worker. The Worker sends Anthropic the information needed for the summary. Alewei processes a random installation identifier, a request identifier and counters without video content to enforce quotas, control costs and prevent abuse. The Worker stores the installation identifier as a hash. Network counters use only a hashed IP value.</p>
+<p>The Worker holds the video content and result in memory for the duration of the request. Providers may process technical metadata under their own settings.</p>
+<p>Consent under Article 6(1)(a) GDPR is the legal basis for requested summaries with provided access. For counters used to control spending and prevent abuse, the legal basis is the legitimate interest in operating a sustainable service under Article 6(1)(f) GDPR. Where storing or accessing information on your device requires consent, Section 25(1) of Germany’s TDDDG applies.</p>
+<p>Cloudflare and Anthropic are based in or process data in the United States. Processing may therefore take place outside the EU or EEA. Transfers rely on the European Commission’s Standard Contractual Clauses under Article 46(2)(c) GDPR where the provider cannot rely on an adequacy decision of the European Commission.</p>
+
+<h2>Your own Anthropic API key</h2>
+<p>Your key stays in your Chrome profile until you delete it in Alewei or remove the extension data. When you check and save a key, the extension sends it directly to Anthropic for validation. When you request a summary using your own key, Chrome sends the information needed for the summary, including video metadata and the transcript, directly to Anthropic. These requests are subject to your Anthropic account’s terms and privacy notices.</p>
+
+<h2>Retention, withdrawal and deletion</h2>
+<p>Alewei can cache completed summaries and video metadata locally in your Chrome profile. Entries older than 30 days are removed when read or when the cache is cleaned. You can clear the local cache in Settings.</p>
+<p>Use “Zustimmungen zurücksetzen” (Reset consents) to withdraw consent for future requests. Where server-side usage data exists, Alewei requests deletion first. After confirmation it removes the local installation identifier and consents. You can separately delete your own key and locally cached summaries.</p>
+<p>Pseudonymous usage records are otherwise deleted after 35 days of inactivity. Counters without video content for the current and previous UTC day are kept when you reset consent. Anonymous daily aggregates are kept for up to 90 days. Deletion leaves incurred costs and anonymous amounts needed for service operation intact.</p>
+<p>For access or deletion requests, email the address above. Please keep API keys, transcripts and confidential video content out of your message.</p>
+
+<h2>Permissions and data use</h2>
+<p>The extension needs access to <code>youtube.com</code> for video context and captions, <code>api.anthropic.com</code> for requests with your own key, and Alewei’s Worker for provided access. Chrome permissions let the extension store settings, consents, keys and cached results, display the side panel and manage running requests. Chrome or your operating system may process local data depending on your browser and profile settings.</p>
+<p>Alewei uses video data only to provide and display the summary you request. Data from Chrome is handled under the <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use">Chrome Web Store Limited Use policy</a>.</p>
+
+<h2>Website and support</h2>
+<p>GitHub Pages hosts this website. GitHub processes technical access data under its own terms. For support requests, we use your email address and message to handle your request.</p>
+
+<h2>Your rights</h2>
+<p>Subject to the statutory conditions, you have rights of access (Article 15 GDPR), rectification (Article 16), erasure (Article 17), restriction (Article 18), data portability (Article 20) and objection (Article 21). You can withdraw consent at any time for future processing.</p>
+<p>You have the right to lodge a complaint with a data protection supervisory authority. The competent authority here is listed below.</p>
+<address>
+Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen<br>
+Kavalleriestraße 2–4<br>
+40213 Düsseldorf, Germany<br>
+<a href="https://www.ldi.nrw.de/">www.ldi.nrw.de</a>
+</address>
+</div>
+</body>
+</html>

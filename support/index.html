@@ -16,7 +16,7 @@
     <a href="/alewei-privacy/privacy/">Datenschutz</a>
     <a href="/alewei-privacy/support/">Support</a>
     <a href="/alewei-privacy/impressum/">Impressum</a>
-  <a href="/alewei-privacy/en/support/" lang="en" hreflang="en">English</a></nav>
+  <a href="/alewei-privacy/en/support/" lang="en" hreflang="en">English</a><a href="/alewei-privacy/terms/">Nutzungsbedingungen</a></nav>
 </header><p class="release-note">Diese Seite beschreibt den vorbereiteten Release 1.0.0. Diese neue Version ist noch nicht veröffentlicht; im Store ist weiterhin die ältere Version 0.1.4 sichtbar.</p>
 
 <h1>Support</h1>
@@ -27,11 +27,8 @@ vertraulichen Videoinhalte mit.</p>
 
 <h2>Häufige Fragen</h2>
 
-<h3>Alewei sagt, das Transkript sei nicht abrufbar</h3>
-<p>Der normale Weg nutzt technisch verfügbare Untertitel. Manche Videos haben keine
-oder nur eine von YouTube gemeldete, aber unbrauchbare Untertitelspur. Öffne
-testweise unter dem Video „…mehr“ und dann „Transkript anzeigen“. Erscheint dort
-kein Transkript, kann Alewei nach gesonderter Zustimmung einen Video-Fallback über Google Gemini anbieten, sofern das bereitgestellte Guthaben reicht.</p>
+<h3>Wie starte ich eine Videoanalyse?</h3>
+<p>Öffne ein öffentliches YouTube-Video und klicke in der Chrome-Symbolleiste auf Alewei. Nach deiner Zustimmung analysiert Alewei das Video und erstellt eine deutsche oder englische Zusammenfassung in der Seitenleiste. Verarbeitet werden öffentliche Videos bis 100 Minuten ohne laufende oder geplante Übertragung. Prüfe wichtige Aussagen im Originalvideo. KI-Transkripte und Zusammenfassungen können Fehler enthalten.</p>
 
 <h3>Wie viele Zusammenfassungen sind kostenlos?</h3>
 <p>Im bereitgestellten kostenlosen Zugang sind bis zu sieben neue erfolgreiche Zusammenfassungen je
@@ -40,22 +37,24 @@ angezeigte, bereits zwischengespeicherte Zusammenfassungen und fehlgeschlagene
 Versuche zählen nicht mit. Der bereitgestellte Zugang ist zusätzlich durch verfügbares Guthaben und Schutzmaßnahmen gegen Missbrauch begrenzt.</p>
 
 <h3>Kann ich meinen eigenen Anthropic-Schlüssel nutzen?</h3>
-<p>Ja. In den Einstellungen von Alewei lässt sich ein eigener Anthropic-API-Schlüssel
-hinterlegen. Er wird ausschließlich lokal im Chrome-Profil gespeichert und geht
-direkt an Anthropic, nicht an Alewei. Anthropic rechnet die Nutzung nach dem
-dortigen Tarif ab. Der Video-Fallback benötigt auch mit eigenem Anthropic-Schlüssel Aleweis verfügbares Gemini-Guthaben.</p>
+<p>Mit einem eigenen Anthropic-API-Schlüssel sendet die Erweiterung das von Gemini erstellte Zeitstempel-Transkript und die für die Zusammenfassung nötigen Daten direkt an Anthropic. Der Schlüssel wird nur in deinem Chrome-Profil gespeichert und an Anthropic gesendet. Anthropic kann deine Nutzung nach deinem Tarif abrechnen. Die Videoanalyse über Gemini nutzt weiterhin das bereitgestellte Guthaben von Alewei.</p>
 
 <h3>Wie ändere ich die Sprache?</h3>
 <p>Wähle in den Einstellungen Automatisch, Deutsch oder English. Automatisch verwendet bei deutscher Browsersprache Deutsch, sonst Englisch. Ein Sprachwechsel startet keinen neuen kostenpflichtigen Aufruf.</p>
 
 <h3>Wie lösche ich meine Daten?</h3>
-<p>In den Einstellungen von Alewei gibt es „Zustimmung zurücksetzen“. Das
-fordert die Löschung der zugeordneten serverseitigen Nutzungsdaten an und entfernt erst nach Erfolg die lokale
-Installationskennung. Ein Fehler wird angezeigt. Kurzlebige Missbrauchsschutzzähler und anonyme Kostenaggregate bleiben gemäß ihrer Aufbewahrung bestehen; Löschung erstattet keine Providerkosten. Für eine Anfrage außerhalb der Erweiterung sende den Supportcode aus den Einstellungen, niemals den geheimen Installationsschlüssel oder einen API-Key. Details stehen in der
+<p>In Aleweis Einstellungen entfernt „Lokale Zusammenfassungen löschen“ den
+Ergebnis-Cache. „Zustimmungen und Nutzungsdaten löschen“ fordert die Löschung der
+serverseitigen Nutzungsdaten an und entfernt nach Erfolg die lokale
+Installationskennung und die Zustimmungen. Ein Fehler wird angezeigt. Um bei
+YouTube gespeicherte Daten zu löschen, verwende <a href="https://www.youtube.com/">YouTube</a> direkt.</p>
+<p>Für eine Löschanfrage außerhalb der Erweiterung sende den Supportcode aus den
+Einstellungen. Die Aufbewahrungsfristen für kurzlebige Missbrauchsschutzzähler
+und anonyme Kostenaggregate stehen in der
 <a href="/alewei-privacy/privacy/">Datenschutzerklärung</a>.</p>
 
 <h3>Die Zusammenfassung wirkt inhaltlich falsch</h3>
-<p>Automatische Untertitel und KI-Ausgaben können Fehler enthalten. Alewei
+<p>KI-Transkripte und Zusammenfassungen können Fehler enthalten. Alewei
 setzt zu jedem Punkt einen Zeitstempel, damit sich die Stelle im Originalvideo
 schnell prüfen lässt. Prüfe wichtige Aussagen bitte immer im Video selbst.</p>
 

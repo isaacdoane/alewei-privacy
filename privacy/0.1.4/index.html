@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutzerklärung für Alewei 0.1.4</title>
+<link rel="stylesheet" href="/alewei-privacy/style.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="brand" href="/alewei-privacy/">Alewei</a>
+  <nav aria-label="Hauptnavigation">
+    <a href="/alewei-privacy/">Start</a>
+    <a href="/alewei-privacy/privacy/">Datenschutz für 1.0.0</a>
+    <a href="/alewei-privacy/support/">Support</a>
+    <a href="/alewei-privacy/impressum/">Impressum</a>
+    <a href="/alewei-privacy/en/privacy/0.1.4/" lang="en" hreflang="en">English</a>
+  </nav>
+</header>
+
+<h1>Datenschutzerklärung für Alewei 0.1.4</h1>
+<p class="release-note">Diese Hinweise gelten für die Chrome-Erweiterung 0.1.4. Für den vorbereiteten Release 1.0.0 gilt eine <a href="/alewei-privacy/privacy/">eigene Datenschutzerklärung</a>.</p>
+
+<h2>Verantwortlicher und Kontakt</h2>
+<address>
+Isaac Antonio<br>
+Am Mühlen Falder 8<br>
+50735 Köln<br>
+Deutschland<br>
+<a href="mailto:isaacdoane7@gmail.com">isaacdoane7@gmail.com</a>
+</address>
+
+<h2>Videokontext und Untertitel</h2>
+<p>Beim Öffnen oder Wechseln eines YouTube-Videos liest Alewei die Video-ID, den Titel, den Kanal und die Dauer lokal im Browser. Erst wenn du eine Zusammenfassung anforderst, ruft die Erweiterung die verfügbaren Untertitel mit Zeitstempeln ab. Im aktuellen öffentlichen Betrieb ist der optionale Gemini-Fallback für fehlende oder unlesbare Untertitel deaktiviert.</p>
+<p>Öffentliche Untertitel können personenbezogene Daten enthalten. Alewei verarbeitet sie, soweit sie im ausgewählten Transkript enthalten sind. Automatische Untertitel und KI-Ausgaben können Fehler enthalten.</p>
+
+<h2>Zusammenfassung mit bereitgestelltem Zugang</h2>
+<p>Nach deiner Zustimmung sendet die Erweiterung Video-ID, Titel, Kanal, Dauer und Transkript verschlüsselt an Aleweis Worker bei Cloudflare. Der Worker sendet die für die Zusammenfassung nötigen Angaben an Anthropic. Für Kontingent, Kostenschutz und Missbrauchsbegrenzung verarbeitet Alewei eine zufällige Installationskennung, eine Anfragekennung und inhaltsfreie Nutzungszähler. Der Worker speichert die Installationskennung als Hash. Netzwerkzähler verwenden ausschließlich einen gehashten IP-Wert.</p>
+<p>Der Worker hält die Videoinhalte und das Ergebnis für die Dauer der Anfrage im Arbeitsspeicher. Die Anbieter können technische Metadaten nach ihren eigenen Einstellungen verarbeiten.</p>
+<p>Die Rechtsgrundlage für die angeforderte Zusammenfassung mit bereitgestelltem Zugang ist deine Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Die inhaltsfreien Zähler für Kosten- und Missbrauchsschutz beruhen auf dem berechtigten Interesse an einem funktionsfähigen Betrieb nach Art. 6 Abs. 1 lit. f DSGVO. Für das Speichern und Auslesen auf deinem Endgerät gilt § 25 Abs. 1 TDDDG, soweit dafür eine Einwilligung erforderlich ist.</p>
+<p>Cloudflare und Anthropic sind Anbieter mit Sitz beziehungsweise Verarbeitung in den USA. Eine Verarbeitung außerhalb der EU oder des EWR kann daher stattfinden. Die Übermittlung wird auf die Standardvertragsklauseln der EU-Kommission nach Art. 46 Abs. 2 lit. c DSGVO gestützt, soweit sich der jeweilige Anbieter nicht auf einen Angemessenheitsbeschluss der EU-Kommission berufen kann.</p>
+
+<h2>Eigener Anthropic-API-Schlüssel</h2>
+<p>Dein Schlüssel bleibt im Chrome-Profil gespeichert, bis du ihn in Alewei löschst oder die Erweiterungsdaten entfernst. Beim Prüfen und Speichern sendet die Erweiterung den Schlüssel direkt an Anthropic. Bei einer Zusammenfassung mit eigenem Schlüssel sendet Chrome die dafür benötigten Videometadaten und das Transkript direkt an Anthropic. Für diese Anfragen gelten die Bedingungen und Datenschutzhinweise deines Anthropic-Kontos.</p>
+
+<h2>Aufbewahrung, Widerruf und Löschung</h2>
+<p>Alewei kann fertige Zusammenfassungen samt Videometadaten lokal im Chrome-Profil zwischenspeichern. Beim Abruf oder bei der Cache-Bereinigung werden Einträge, die älter als 30 Tage sind, entfernt. Du kannst den lokalen Cache in den Einstellungen leeren.</p>
+<p>Über „Zustimmungen zurücksetzen“ kannst du die Einwilligung für künftige Anfragen widerrufen. Wenn serverseitige Nutzungsdaten vorliegen, fordert Alewei zuerst ihre Löschung an. Nach Bestätigung entfernt es die lokale Installationskennung und die Zustimmungen. Dein eigener Schlüssel und lokale Zusammenfassungen lassen sich separat löschen.</p>
+<p>Ohne eine solche Löschung werden pseudonyme Nutzungsdaten nach 35 Tagen Inaktivität gelöscht. Inhaltsfreie Tageszähler für den aktuellen und vorherigen UTC-Tag bleiben beim Zurücksetzen erhalten. Anonyme Tagesaggregate bleiben höchstens 90 Tage erhalten. Bereits angefallene Kosten und anonyme Beträge für den laufenden Betrieb werden bei der Löschung nicht zurückgesetzt.</p>
+<p>Für Auskunft und Löschung kannst du dich per E-Mail an die oben genannte Adresse wenden. Bitte sende keine API-Schlüssel, Transkripte oder vertraulichen Videoinhalte.</p>
+
+<h2>Berechtigungen und Datennutzung</h2>
+<p>Die Erweiterung benötigt Zugriff auf <code>youtube.com</code> für Videokontext und Untertitel, auf <code>api.anthropic.com</code> für Anfragen mit eigenem Schlüssel und auf Aleweis Worker für den bereitgestellten Zugang. Chrome-Berechtigungen erlauben das Speichern von Einstellungen, Zustimmungen, Schlüsseln und Cache, die Anzeige in der Seitenleiste und die Verwaltung laufender Anfragen. Chrome oder das Betriebssystem können lokale Daten abhängig von den Einstellungen des Browsers und Profils verarbeiten.</p>
+<p>Alewei verwendet Videodaten ausschließlich zur angeforderten Zusammenfassung und Anzeige. Daten aus Chrome werden gemäß der <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use">Chrome-Web-Store-Richtlinie zur eingeschränkten Datennutzung</a> verarbeitet.</p>
+
+<h2>Website und Support</h2>
+<p>GitHub Pages stellt diese Website bereit. GitHub verarbeitet technische Zugriffsdaten nach seinen eigenen Bedingungen. Bei Supportanfragen verwenden wir deine E-Mail-Adresse und Nachricht zur Bearbeitung deiner Anfrage.</p>
+
+<h2>Deine Rechte</h2>
+<p>Unter den gesetzlichen Voraussetzungen bestehen Rechte auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21). Eine erteilte Einwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+<p>Du hast das Recht, dich bei einer Datenschutzaufsichtsbehörde zu beschweren. Hier ist die folgende Behörde zuständig.</p>
+<address>
+Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen<br>
+Kavalleriestraße 2–4<br>
+40213 Düsseldorf<br>
+<a href="https://www.ldi.nrw.de/">www.ldi.nrw.de</a>
+</address>
+</div>
+</body>
+</html>
