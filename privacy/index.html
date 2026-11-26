@@ -20,8 +20,8 @@
 </header><p class="release-note">Alewei 1.0.0 ist im Chrome Web Store verfügbar. <a href="/alewei-privacy/privacy/0.1.4/">Datenschutzerklärung für Version 0.1.4</a>.</p>
 
 <h1>Datenschutzerklärung</h1>
-<p class="meta"><strong>Stand:</strong> 20. November 2026<br>
-<strong>Gültig für:</strong> Alewei Chrome-Erweiterung Version 1.0.0</p>
+<p class="meta"><strong>Stand:</strong> 26. November 2026<br>
+<strong>Gültig für:</strong> Alewei Chrome-Erweiterung Version 1.0.0 und den in Abschnitt 4 beschriebenen Transkriptweg ab Version 1.0.1</p>
 
 <h2>1. Verantwortlicher</h2>
 <address>
@@ -69,6 +69,9 @@ nach ihrer jeweiligen Konfiguration verarbeiten.</p>
 <p>Vor der ersten Analyse zeigt Alewei die Datenschutzinformationen und fragt nach deiner ausdrücklichen Zustimmung. In den Einstellungen kannst du die Zustimmung für künftige Analysen widerrufen.</p>
 <p>Der Worker sendet die Video-ID an die YouTube Data API und erhält Titel, Kanal, Laufzeit und Angaben zur Öffentlichkeit sowie zum Live-Status. Verarbeitet werden bestätigte öffentliche Videos bis 100 Minuten. An Google Gemini geht anschließend die aus der ID erzeugte öffentliche Video-URL. Gemini erstellt daraus ein Zeitstempel-Transkript. Im bereitgestellten Zugang sendet der Worker die für die Zusammenfassung nötigen Informationen an Anthropic. Mit eigenem Anthropic-Schlüssel übernimmt die Erweiterung diesen Schritt direkt.</p>
 <p>Die <a href="/alewei-privacy/terms/">Nutzungsbedingungen</a> erläutern die Nutzung von Alewei. Dabei gelten die <a href="https://www.youtube.com/t/terms">YouTube-Nutzungsbedingungen</a>. Informationen zur Verarbeitung bei Google findest du in der <a href="https://policies.google.com/privacy">Google-Datenschutzerklärung</a>.</p>
+<h3 id="transkript-einfuegen">Eingefügtes YouTube-Transkript ab Version 1.0.1</h3>
+<p>Für öffentliche Videos von 45 bis 100 Minuten kannst du das vollständige YouTube-Transkript mit Zeitmarken selbst kopieren und in die Seitenleiste einfügen. Die Erweiterung fordert keine Leseberechtigung für die Zwischenablage an. Erst mit „Transkript senden und zusammenfassen“ stimmst du diesem Auftrag zu. Chrome übermittelt den Transkripttext, die Video-ID und die gewählte Sprache an Aleweis Cloudflare-Worker. Die pseudonyme Installationskennung dient der Kontingentprüfung.</p>
+<p>Der Worker prüft die Video-ID mit der YouTube Data API und erhält Titel, Kanal, Dauer, Sichtbarkeit und Live-Status. Er übermittelt den für die Zusammenfassung benötigten Text mit Zeitmarken sowie Titel, Kanal und Dauer an Anthropic. Dieser Weg nutzt Aleweis bereitgestellten Zugang, auch wenn du einen eigenen Schlüssel gespeichert hast. Das Transkript geht nicht an Gemini. Alewei verarbeitet es nur für den Auftrag im Arbeitsspeicher. Für das Ergebnis gelten die in Abschnitt 7 beschriebenen Cache- und Löschregeln.</p>
 <h2>5. Eigener Anthropic-API-Schlüssel</h2>
 <p>Mit einem eigenen Anthropic-API-Schlüssel sendet die Erweiterung das von Gemini erstellte Zeitstempel-Transkript und die für die Zusammenfassung nötigen Daten direkt an Anthropic. Der Schlüssel wird nur in deinem Chrome-Profil gespeichert und an Anthropic gesendet. Anthropic kann deine Nutzung nach deinem Tarif abrechnen. Die Videoanalyse über Gemini nutzt weiterhin das bereitgestellte Guthaben von Alewei.</p>
 <p>Für die Verarbeitung bei Anthropic gelten die Bedingungen und Datenschutzhinweise deines Anthropic-Kontos. Du kannst den Schlüssel in den Einstellungen oder durch Entfernen der Erweiterungsdaten löschen.</p>
